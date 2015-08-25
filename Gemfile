@@ -48,6 +48,8 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'timecop'
   gem 'factory_girl_rails'
+  gem 'magic_lamp'
+  gem 'database_cleaner'
 end
 
 group :production do
