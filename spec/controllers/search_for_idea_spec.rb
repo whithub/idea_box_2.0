@@ -13,32 +13,32 @@ describe 'Searching for an Idea', type: :feature do
     expect(page).to have_field("Search for Idea")
   end
 
-  it "can search for an idea by title" do
-    fill_in "Search for Idea", with: "Second idea title"
-    click_on "Search"
+  # it "can search for an idea by title" do
+  #   fill_in "Search for Idea", with: "Second idea title"
+  #   click_on "Search"
+  #
+  #   expect(current_path).to eq('/')
+  #   expect(page).to have_content('Idea Title #1')
+  #   expect(page).to_not have_content('Idea Title #2')
+  # end
 
-    expect(current_path).to eq('/')
-    expect(page).to have_content('Idea Title #1')
-    expect(page).to_not have_content('Idea Title #2')
-  end
-
-  it "can search for an idea by title in real time" do
+  it "by title in real time" do
     fill_in "Search for Idea", with: "Sec"
 
     expect(page).to have_content('Second idea title')
     expect(page).to_not have_content('First idea title')
   end
 
-  it "can search for an idea by description" do
-    fill_in "Search for Idea", with: "Idea #2 Description"
-    click_on "Search"
+  # it "can search for an idea by description" do
+  #   fill_in "Search for Idea", with: "Idea #2 Description"
+  #   click_on "Search"
+  #
+  #   expect(current_path).to eq('/')
+  #   expect(page).to have_content('Idea #2 Description')
+  #   expect(page).to_not have_content('Idea #1 Description')
+  # end
 
-    expect(current_path).to eq('/')
-    expect(page).to have_content('Idea #2 Description')
-    expect(page).to_not have_content('Idea #1 Description')
-  end
-
-  it "can search for an idea by description in real time" do
+  it "by description in real time" do
     fill_in "Search for Idea", with: "Idea #1 Des"
 
     expect(page).to have_content('Idea #1 Description')
