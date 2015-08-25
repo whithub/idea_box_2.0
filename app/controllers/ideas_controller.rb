@@ -1,6 +1,8 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:edit, :update, :destroy]
 
+
+
   def index
     @ideas = Idea.all
     @idea = Idea.new

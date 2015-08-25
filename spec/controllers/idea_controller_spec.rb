@@ -18,7 +18,7 @@ describe 'Ideas', type: :feature do
   it "can be created" do
     fill_in "New Idea Title", with: "Brand New Idea!"
     fill_in "New Idea Description", with: "Description of brand new idea."
-    click_on "Create Idea"
+    click_on "Save"
 
     expect(page).to have_content('Brand New Idea!')
     expect(page).to have_content("Description of brand new idea.")
@@ -28,7 +28,7 @@ describe 'Ideas', type: :feature do
 
   it "cannot be created without both an title and description" do
     fill_in "New Idea Title", with: "Brand New Idea!"
-    click_on "Create Idea"
+    click_on "Save"
 
     expect(page).to have_content("Description cannot be blank.")
 
@@ -48,7 +48,7 @@ describe 'Ideas', type: :feature do
 
     fill_in 'First idea title', with: 'Idea Title #1'
     fill_in 'Idea #1 Description', with: 'Description of Idea #1'
-    click_on "Update"
+    click_on "Save"
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Idea Title #1')
