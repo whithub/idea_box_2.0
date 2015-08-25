@@ -18,7 +18,7 @@ describe 'Ideas', type: :feature do
   it "can be created" do
     fill_in "New Idea Title", with: "Brand New Idea!"
     fill_in "New Idea Description", with: "Description of brand new idea."
-    click_on "Save"
+    click_on "Create Idea"
 
     expect(page).to have_content('Brand New Idea!')
     expect(page).to have_content("Description of brand new idea.")
@@ -28,7 +28,7 @@ describe 'Ideas', type: :feature do
 
   it "cannot be created without both an title and description" do
     fill_in "New Idea Title", with: "Brand New Idea!"
-    click_on "Save"
+    click_on "Create Idea"
 
     expect(page).to have_content("Description cannot be blank.")
 
@@ -40,7 +40,7 @@ describe 'Ideas', type: :feature do
 
 
   it "can be edited" do
-    first("Edit").click
+    first(:link, "Edit").click
 
     # expect(page). to have_field()
     expect(page).to have_content('First idea title')
@@ -58,8 +58,9 @@ describe 'Ideas', type: :feature do
   end
 
   it "can be deleted" do
-    first("Delete").click
+    first(:link, "Delete").click
 
+    expect(current_path).to eq('/')
     expect(page).to_not have_content('First idea title')
     expect(page).to_not have_content('Idea #1 Description')
     expect(page).to have_content('Second idea title')

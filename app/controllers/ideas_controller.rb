@@ -49,6 +49,12 @@ class IdeasController < ApplicationController
     # end
   end
 
+  def destroy
+    @idea.destroy
+    flash.now[:success] = "Idea was successfully deleted."
+    redirect_to root_path
+  end
+
   private
 
   def idea_params
