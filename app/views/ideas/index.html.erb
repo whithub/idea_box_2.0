@@ -2,11 +2,11 @@
 
 <div class="ideas">
   <% @ideas.each do |idea| %>
-    <div class="idea" >
+    <div class="idea">
       <h1><%= idea.title %></h1>
       <dl>
         <dt>Description</dt>
-        <dd class="idea_description"><%= idea.description %></dd>
+        <dd><h3><%= idea.description %></h3></dd>
       </dl>
     </div>
   <% end %>
