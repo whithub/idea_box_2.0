@@ -7,9 +7,14 @@
     <div class="idea">
       <h1><%= idea.title %></h1>
       <dl>
-        <dt>Description</dt>
-        <dd><h3><%= idea.description %></h3></dd>
+        <h2>Description: </h2>
+        <h3><%= idea.description %></h3>
+        <%= link_to "Edit Idea", edit_idea_path(idea) %><br>
+
       </dl>
     </div>
   <% end %>
 </div>
+
+
+    <!--@ideas.sort_by { |idea| [idea.created_at, idea.updated_at].max-->
