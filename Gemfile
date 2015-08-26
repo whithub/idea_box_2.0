@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'responders'
 
 group :test do
   gem 'simplecov', :require => false
@@ -46,11 +47,11 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'coveralls', require: false
-  gem 'timecop'
+  # gem 'coveralls', require: false
+  # gem 'timecop'
   gem 'factory_girl_rails'
-  gem 'magic_lamp'
-  gem 'database_cleaner'
+  # gem 'magic_lamp'
+  # gem 'database_cleaner'
 end
 
 group :production do

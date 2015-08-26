@@ -9,6 +9,8 @@
       <dl>
         <h2>Description: </h2>
         <h3><%= idea.description %></h3>
+        <h3>Quality: <%= idea.quality %></h3>
+
         <%= link_to "Edit", edit_idea_path(idea) %><br>
         <%= link_to "Delete", idea_path(idea), method: :delete %><br>
       </dl>

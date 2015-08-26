@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825015919) do
+ActiveRecord::Schema.define(version: 20150826015611) do
 
   create_table "ideas", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "quality",     default: 0
   end
 
 end
