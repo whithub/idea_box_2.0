@@ -11,9 +11,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    # @idea = Idea.create(title: params[:title], description: params[:description])
     @idea = Idea.new(idea_params)
-    # respond_with @idea
     if @idea.save
       respond_to do |format|
         format.html { redirect_to root_path, notice: "The idea was created." }   #When someone request html, redirect...
@@ -39,15 +37,6 @@ class IdeasController < ApplicationController
       render :edit
     end
 
-    # # respond_to do |format|
-    #   if @idea.update(idea_params)
-    #     format.html { redirect_to root_path, notice: 'Idea was successfully updated.' }
-    #     # format.json { render :show, status: :ok, location: @product }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @product.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def destroy
