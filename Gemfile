@@ -36,10 +36,11 @@ gem 'responders'
 group :test do
   gem 'simplecov', :require => false
   gem 'launchy'
-  gem 'capybara'
   gem 'shoulda-matchers'
-  gem 'puma'
-  gem 'jasmine'
+  # gem 'puma'
+  # gem 'jasmine'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
@@ -47,11 +48,11 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'capybara'
   # gem 'coveralls', require: false
   # gem 'timecop'
   gem 'factory_girl_rails'
   # gem 'magic_lamp'
-  # gem 'database_cleaner'
 end
 
 group :production do
