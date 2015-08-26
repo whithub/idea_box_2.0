@@ -15,9 +15,7 @@
 $(document).ready(function () {
 
   $('.idea-form').submit(function(e) {
-    console.log("Hello world!")
     $(this).find('.form-field').each(function(n, element) {
-      console.log("Hello ...!")
       if ($(element).val() == '') {
         e.preventDefault();
         alert('You goof... You need both title and description to create an idea.');
