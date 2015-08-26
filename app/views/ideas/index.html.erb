@@ -9,7 +9,9 @@
       <dl>
         <h2>Description: </h2>
         <h3><%= idea.description %></h3>
-        <h3>Quality: <%= idea.quality %></h3>
+        <h3 class="quality">Quality: <%= idea.quality %></h3>
+        <%= link_to 'Thumbs Up', upvote_idea_path(idea), class: 'idea-upvote' %>
+        <%= link_to 'Thumbs Down', downvote_idea_path(idea) %>
 
         <%= link_to "Edit", edit_idea_path(idea) %><br>
         <%= link_to "Delete", idea_path(idea), method: :delete %><br>

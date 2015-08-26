@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function () {
+  $("a.idea-upvote").click(function(event) {
+    event.preventDefault();
+
+    var link = $(this);
+    $.getJSON( link.attr('href'), function( data ) {
+      link.parent().find('h3.quality').html('Quality: ' + data.quality);
+    });
+  });
+});

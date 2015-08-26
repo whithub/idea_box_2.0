@@ -4,7 +4,7 @@ describe 'An idea quality', type: :feature do
 
   context "upon creation" do
     it "is defaulted to swill" do
-      @idea = Idea.create(title: "What a great new idea!", description: "Description of this great new idea.")
+      @idea = Idea.create!(title: "What a great new idea!", description: "Description of this great new idea.")
 
       expect(page).to have_content("What a great new idea!")
       expect(page).to have_content("Description of this great new idea.")

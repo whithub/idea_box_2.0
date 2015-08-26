@@ -22,8 +22,8 @@ describe 'Searching for an Idea', type: :feature do
   #   expect(page).to_not have_content('Idea Title #2')
   # end
 
-  it "by title in real time" do
-    fill_in "Search for Idea", with: "Sec"
+  it "by title in real time", javascript: true do
+    fill_in "Search for Idea", with: "Seco"
 
     expect(page).to have_content('Second idea title')
     expect(page).to_not have_content('First idea title')

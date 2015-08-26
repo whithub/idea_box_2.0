@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
-  respond_to :json
-  before_action :set_idea, only: [:edit, :update, :destroy]
+  respond_to :html, :json, :xml
+  before_action :set_idea, only: [:edit, :update, :destroy, :thumbs_up, :thumbs_down]
 
   def index
     @ideas = Idea.all
@@ -12,6 +12,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
 
     if @idea.save
+      # respond_with @idea
       respond_to do |format|
         format.html { redirect_to root_path, notice: "The idea was created." }   #When someone request html, redirect...
         format.json { render json: @idea }                                        #Resond to a json request, and we're responding with a json version of the idea
@@ -39,18 +40,6 @@ class IdeasController < ApplicationController
     # else
     #   flash.now[:notice] = "Idea could not be saved."
     #   render :new
-    # end
-
-
-    # respond_to do |format|
-    #   if @idea.save
-    #     format.html { render :index, notice: 'Idea was successfully created!' }
-    #     format.json { render :index, status: ok}
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @idea.errors, status: :unprocessable_entity }
-    #
-    #   end
     # end
   end
 
@@ -80,6 +69,18 @@ class IdeasController < ApplicationController
     @idea.destroy
     flash.now[:success] = "Idea was successfully deleted."
     redirect_to root_path
+  end
+
+  def thumbs_up
+    @idea.upvote
+    @idea.save
+    respond_with @idea
+  end
+
+  def thumbs_down
+    @idea.downvote
+    @idea.save
+    respond_with @idea
   end
 
   private
