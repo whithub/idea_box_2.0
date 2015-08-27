@@ -10,7 +10,7 @@
       <dl>
         <h3 class="quality">Quality: <%= idea.quality %></h3>
         <h3 class="description"><%= idea.description %></h3>
-        <%= link_to 'Thumbs Up', upvote_idea_path(idea), class: 'upvote' %>
+        <h6><%= link_to 'Thumbs Up', upvote_idea_path(idea), class: 'upvote' %></h6>
         <%= link_to 'Thumbs Down', downvote_idea_path(idea), class: 'downvote' %>
 
         <%= link_to "Edit", edit_idea_path(idea), class: 'edit' %><br>

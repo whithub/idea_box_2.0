@@ -19,7 +19,7 @@ class IdeasController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to root_path, notice: "The idea was3e3e3e created." }
+        format.html { redirect_to root_path, notice: "The idea was not created." }
         format.json { render json: { messages: @idea.errors.messages} }   #idea.errors.full_messages => “Name has already been taken”
       end
     end
