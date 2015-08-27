@@ -32,15 +32,6 @@ describe 'Ideas', type: :feature, :js => true do
 
     error_message = page.driver.browser.switch_to.alert
     expect(error_message.text).to eq("You goof... You need both title and description to create an idea.")
-
-    # expect(page).to have_errors
-
-    # expect(page).to have_content("You goof... You need both title and description to create an idea.")
-
-    # fill_in "New Idea Description", with: "Description of brand new idea."
-    #
-    # expect(page).to have_content('Brand New Idea!')
-    # expect(page).to have_content('Description of brand new idea.')
   end
 
 
