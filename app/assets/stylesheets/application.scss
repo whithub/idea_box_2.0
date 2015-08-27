@@ -1,6 +1,8 @@
 @import "bourbon";
 @import "neat";
 
+@import "forms";
+
 
 @mixin vertical-align {
   position: relative;
@@ -10,6 +12,21 @@
   transform: translateY(-50%);
 }
 
+body {
+  background-color: darken(#FFF, 2%);
+}
+
+.new-idea-header {
+  @include span-columns(12);
+  text-align: center;
+  font-family: Courier New, monospace;
+}
+
+.edit-idea-header {
+  @include span-columns(12);
+  text-align: center;
+  font-family: Courier New, monospace;
+}
 
 .hero {
   background: image-url('desktop.jpg') no-repeat center;
@@ -26,13 +43,85 @@
   }
 }
 
+.idea-boxes {
+  @include outer-container();
+  padding: 4rem;
+}
+
 .filter {
-  float: left;
-  display: block;
-  width: 48.82117%;
-  margin-left: 25.58941%;
-  padding: 20px 0;
-  position: relative;
+  @include span-columns(4);
+  @include shift(4);
+  text-align: center;
+//  font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+  font-family: Courier New, monospace;
+
+  //float: left;
+  //display: block;
+  //width: 48.82117%;
+  //margin-left: 25.58941%;
+  //padding: 20px 0;
+  //position: relative;
+}
+
+.ideas {
+  .idea {
+    @include span-columns(12);
+    border-bottom: dotted #333 2px;
+    padding-bottom: 20px;
+
+    h1 {
+      @include span-columns(4);
+      font-family: Courier New, monospace;
+      color: #ADA714;
+    }
+
+    h3.description {
+      @include span-columns(8);
+      font-family: Courier New, monospace;
+
+    }
+    h3.quality {
+      @include span-columns(7);
+      text-align: right;
+      font-family: Courier New, monospace;
+    }
+
+    .upvote {
+      @include span-columns(3);
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+      font-size: 1rem;
+      font-family: Courier New, monospace;
+    }
+
+    .downvote {
+      @include span-columns(3);
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+      font-size: 1rem;
+      font-family: Courier New, monospace;
+    }
+
+    .edit {
+      @include span-columns(3);
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+      font-size: 1rem;
+      font-family: Courier New, monospace;
+    }
+
+    .delete {
+      @include span-columns(3);
+      text-align: right;
+      font-weight: bold;
+      color: #000;
+      font-size: 1rem;
+      font-family: Courier New, monospace;
+    }
+  }
 }
 
 .footer {
@@ -53,7 +142,7 @@
       margin: 0;
     }
   }
-  .links a {
+  .links {
     list-style: none;
     font-weight: bold;
     color: #ffffff;

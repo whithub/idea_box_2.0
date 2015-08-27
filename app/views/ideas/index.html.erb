@@ -1,15 +1,15 @@
 <%= render "search" %><br>
 
+<h1 class="new-idea-header"> Enter a New Idea:</h1>
 <%= render "form" %>
 
 <div class="ideas">
   <% @ideas.each do |idea| %>
     <div class="idea">
-      <h1><%= idea.title %></h1>
+      <h1><%= idea.title %>:</h1>
       <dl>
-        <h2>Description: </h2>
-        <h3><%= idea.description %></h3>
         <h3 class="quality">Quality: <%= idea.quality %></h3>
+        <h3 class="description"><%= idea.description %></h3>
         <%= link_to 'Thumbs Up', upvote_idea_path(idea), class: 'upvote' %>
         <%= link_to 'Thumbs Down', downvote_idea_path(idea), class: 'downvote' %>
 
