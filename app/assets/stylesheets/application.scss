@@ -1,0 +1,71 @@
+@import "bourbon";
+@import "neat";
+
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.hero {
+  background: image-url('desktop.jpg') no-repeat center;
+  background-size: cover;
+  height: 40vh;
+  overflow: hidden;
+  h1 {
+    color: #ADA714;
+    font-family: Courier New, monospace;
+    text-align: right;
+    @include vertical-align;
+    font-size: 90px;
+    padding: 0px 135px 250px;
+  }
+}
+
+.filter {
+  float: left;
+  display: block;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  padding: 20px 0;
+  position: relative;
+}
+
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem;
+  p {
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+    &.copywrite {
+      color: #8f9296;
+      font-size: 1rem;
+      font-family: Courier New, monospace;
+      margin: 0;
+    }
+  }
+  .links a {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 3rem 0 2rem;
+    margin: 0;
+    &::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+    &:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+  }
+}
